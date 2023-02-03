@@ -1,3 +1,1 @@
-x = "Hola Mundo"
-str(x)
-print(x)
+print("Hola Mundo")
