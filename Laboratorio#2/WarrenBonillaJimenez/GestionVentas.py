@@ -37,16 +37,14 @@ def crearFactura(
         elif (categoriaVenta=="C"):
             descuento = input("Ingrese el monto seleccionado para el descuento:")
             ofactura.montofactura = ofactura.montofactura - descuento
-        #n = 2
-        #x = 0
-        #resultado = n / x
-    #consecutivoFactura += 1 
+        
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
+    
     
   
 def imprimirfacturas():
