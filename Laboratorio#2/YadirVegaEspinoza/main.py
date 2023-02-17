@@ -11,8 +11,6 @@ def registrarfactura():
 def imprimirfacturas():
     gv.imprimirfacturas()
     
-
-    
 def main(): 
        
     while True:
