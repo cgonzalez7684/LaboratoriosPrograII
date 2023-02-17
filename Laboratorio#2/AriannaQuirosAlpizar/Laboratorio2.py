@@ -33,8 +33,8 @@ def crearFactura(
              desc = montof - input ("¿que monto de descuento desea realizar?")
              desc = montof - descuentoaplicado
 
-    ofactura.calculaImpuesto() 
-    
+      ofactura.calculaImpuesto() 
+
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
