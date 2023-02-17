@@ -5,6 +5,7 @@ def categoriaVenta():
    categoria = float(input("Digite la categoria: "))
    gv.crearFactura(categoria)
 
+#codigo hecho por Warren
 def registrarfactura():
    monto = float(input("Digitar el monto de la factura: "))
    gv.crearFactura(monto)
