@@ -36,7 +36,7 @@ def crearFactura(
         global consecutivoFactura
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
-        ofactura.fechafactura = dt.now    
+        ofactura.fechafactura = dt.now().strftime("%m/%d/%Y, %H:%M:%S")
         ofactura.montofactura = montofactura        
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
