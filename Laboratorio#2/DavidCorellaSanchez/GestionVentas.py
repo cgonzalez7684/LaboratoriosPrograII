@@ -58,6 +58,7 @@ def imprimirfacturas():
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         print("El descuento de la factura es ",n.descuento*100) 
-        print("El descuento de la factura es ",n.fechafactura) 
+        print("El descuento de la factura es ",n.fechafactura)
+        print("El descuento de la factura es ",n.fechafactura)  
         
 
