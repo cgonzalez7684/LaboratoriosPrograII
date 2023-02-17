@@ -25,13 +25,13 @@ def crearFactura(
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
         ofactura.montofactura = montofactura       
-        if (categoria = "a"):
+        if(categoria ='a'):
             descuento = ofactura.montofactura* 0.05
             ofactura.montofactura = ofactura.montofactura - descuento
-        elif (categoria = "b"):
+        elif(categoria ='b'):
             descuento = ofactura.montofactura * 0.10
             ofactura.montofactura = ofactura.montofactura - descuento
-        elif (categoria = "c"):
+        elif(categoria ='c'):
             imput("digite el monto de descuento a aplicar")
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
