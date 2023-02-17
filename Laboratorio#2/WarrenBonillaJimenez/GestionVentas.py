@@ -28,12 +28,15 @@ def crearFactura(
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
-        #n = 2
-        #x = 0
-        #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
+        if (categoriaVenta=="A"):
+            descuento = ofactura.montofactura * 5 /100
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif (categoriaVenta=="B"):
+            descuento = ofactura.montofactura * 10 /100
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif (categoriaVenta=="C"):
+            descuento = input("Ingrese el monto seleccionado para el descuento:")
+            ofactura.montofactura = ofactura.montofactura - descuento
         
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
@@ -41,9 +44,7 @@ def crearFactura(
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
-    
-    
-  
+     
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
@@ -52,5 +53,3 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        
-

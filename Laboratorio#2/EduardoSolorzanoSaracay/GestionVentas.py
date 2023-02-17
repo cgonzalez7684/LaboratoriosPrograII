@@ -31,10 +31,7 @@ def crearFactura(
         #n = 2
         #x = 0
         #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
-        
+    #consecutivoFactura += 1 
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
@@ -42,7 +39,23 @@ def crearFactura(
     except BaseException:
         print('Existe un error al crear la factura')
     
+def descuentoproductos():    
+    Monto_descuento_CA = 0.05
+    Monto_descuento_CB = 0.10
     
+        
+    Categoria_Venta = int(input("Ingrese la categoria de la venta. 1=A ; 2=B ; 3=C"))
+    Montofactura = input("Ingrese el monto de la venta")
+
+    if (Categoria_Venta == 1):  
+        (Montofactura*Monto_descuento_CA)+Montofactura
+    elif (Categoria_Venta == 2):
+        (Montofactura*Monto_descuento_CB)+Montofactura
+    elif (Categoria_Venta == 3):
+        Monto_descuento_CC = input("Ingrese el descuento en decimales. ej=0.10 para 10%") 
+        (Montofactura*Monto_descuento_CC) + Montofactura  
+
+
   
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
@@ -53,4 +66,3 @@ def imprimirfacturas():
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
-
