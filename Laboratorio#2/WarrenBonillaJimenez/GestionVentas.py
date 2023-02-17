@@ -44,9 +44,7 @@ def crearFactura(
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
-    
-    
-  
+     
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
