@@ -13,6 +13,19 @@ def encabezadoSistema():
     print("Opción #2 : Imprimir facturas")
     print("----------------------------------")
 
+def descuento_por_categoria(monto,categoria):
+    monto_con_descuento = monto
+    if categoria == 'A':
+        monto_con_descuento = monto_con_descuento - (monto_con_descuento * 0.05)
+    elif categoria == 'B':
+        monto_con_descuento = monto_con_descuento - (monto_con_descuento * 0.1)
+        pass
+    elif categoria == 'C':
+        porcentaje = float(input("Ingrese el porcentaje de descuento a realizar: "))
+        descuento = porcentaje / 100
+        monto_con_descuento = monto_con_descuento - (monto_con_descuento * descuento)
+    return monto_con_descuento
+    
 def crearFactura(             
                  montofactura,
                  categoriaVenta                 
