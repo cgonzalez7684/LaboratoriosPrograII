@@ -11,14 +11,11 @@ def encabezadoSistema():
     print("----------------------------------")   
     print("Opción #1 : Crear facturas")
     print("Opción #2 : Imprimir facturas")
-    print("Opción #3 : Salir")
     print("----------------------------------")
-    
 
 def crearFactura(             
                  montofactura,
-                 categoriaVenta,
-                 nombreCliente                 
+                 categoriaVenta                 
                  ):
     
     try:
@@ -28,11 +25,19 @@ def crearFactura(
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
         ofactura.montofactura = montofactura        
-        ofactura.calculaImpuesto()
-        ofactura.nombreCliente = nombreCliente
-        ofactura.categoriaVenta = categoriaVenta   
+        ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
+    
+        if (ofactura.categoriaVenta=="A"):
+            ofactura=ofactura-(ofactura*0.05)
+        else:
+            if (ofactura.categoriaVenta=="B"):
+                ofactura=ofactura-(ofactura*0.10)
+            else:
+                porcentaje=int(input("Inserta un valor que sea un número: "))
+                porcentaje=porcentaje/100
+                ofactura=ofactura-(ofactura*porcentaje)
         #n = 2
         #x = 0
         #resultado = n / x
@@ -50,12 +55,7 @@ def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
     for n in listadoFacturas:
-        print("El nombre del cliente es: " + n.nombreCliente)
-        print("Fecha: " + n.fechafactura)
-        print("La compra es Categoria: " + n.categoriaVenta )
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        
-    

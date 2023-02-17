@@ -25,7 +25,6 @@ def registrarfactura():
     gv.crearFactura(montoReal,"C",Nombre)
    
 
-    
 def imprimirfacturas():
     gv.imprimirfacturas()
     
@@ -33,7 +32,7 @@ def imprimirfacturas():
     
 def main(): 
        
-    while True:
+    while (opcion != 3):
         gv.encabezadoSistema()
         opcion = int(input("Digitar la opción sistema: "))
         if (opcion == 1):
