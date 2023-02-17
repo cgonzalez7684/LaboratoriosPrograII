@@ -6,8 +6,8 @@ class Factura:
         self.impuestofactura = None 
         self.nombreCliente = None
         self.categoriaVenta = None
+        self.descuento = None
     
-#codigo hecho por Warren
     def calculaImpuesto(self):
         self.impuestofactura = self.montofactura * 0.13
         return self.impuestofactura

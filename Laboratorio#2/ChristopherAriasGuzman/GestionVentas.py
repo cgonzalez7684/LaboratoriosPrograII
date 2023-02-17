@@ -2,7 +2,7 @@ from Dominio import Factura
 from datetime import datetime as dt
 
 listadoFacturas = [] #list
-
+print("hola")
 formatoConseFact = "FACT#{0}" 
 consecutivoFactura = 1
 
