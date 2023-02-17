@@ -3,22 +3,27 @@ from Dominio import Factura
 
 #Este metodo registrar facturas
 def registrarfactura():
+
    Nombre = input("Digita el nombre del cliente: ")
+   categoriaVenta = input("Digita la catergoria de la venta: ")
    monto = float(input("Digitar el monto de la factura: "))
    montoReal = 0
-   if (monto >= 10000):
-    montoReal = monto - (monto * 0.5)
+
+   if (categoriaVenta == "A" or categoriaVenta == "a"):
+    montoReal = monto - (monto * 0.05)
     gv.crearFactura(montoReal,"A",Nombre)
 
-   elif(monto>=15000):
+   elif(categoriaVenta == "B" or categoriaVenta == "b"):
     
     montoReal = monto - (monto * 0.10)
     gv.crearFactura(montoReal,"B",Nombre)
 
-   elif(monto>=20000):
+   elif(categoriaVenta == "C" or categoriaVenta == "c"):
     MontoAdmin = float(input("Digitar el descuento de la factura: "))
+    MontoAdmin = MontoAdmin / 100
     montoReal = monto - (monto * MontoAdmin)
     gv.crearFactura(montoReal,"C",Nombre)
+   
 
     
 def imprimirfacturas():
