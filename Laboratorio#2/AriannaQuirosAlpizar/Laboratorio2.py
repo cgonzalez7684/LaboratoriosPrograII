@@ -18,7 +18,6 @@ def crearFactura(
                  categoriaVenta                 
                  ):
     
-    try:
         ofactura = Factura() #instanciar una clase en un objeto (ya existe en memoria)   
         global consecutivoFactura
         numFact = str(consecutivoFactura).rjust(5,'0')
