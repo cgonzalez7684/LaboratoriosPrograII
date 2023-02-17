@@ -19,12 +19,21 @@ def crearFactura(
                  ):
     
     try:
+        
         ofactura = Factura() #instanciar una clase en un objeto (ya existe en memoria)   
         global consecutivoFactura
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura
+        ofactura.categoriaVenta = categoriaVenta
+        if(categoriaVenta == 'A'):
+            ofactura.montofactura = (montofactura * 0.95)
+        elif(categoriaVenta == 'B'):
+            ofactura.montofactura = (montofactura * 0.90)
+        elif(categoriaVenta == 'C'):
+            dato = int(input("ingrese descuento a realizar: "))
+            ofactura.montofactura = montofactura - (montofactura * (dato / 100))
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
@@ -49,5 +58,3 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        
-
