@@ -15,7 +15,7 @@ def encabezadoSistema():
 
 def crearFactura(             
                  montofactura,
-                 categoriaVenta                 
+                 categoria                 
                  ):
     
     try:
@@ -24,7 +24,9 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura  
+        ofactura = categoria
+        ofactura.calculaDescuento()
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
