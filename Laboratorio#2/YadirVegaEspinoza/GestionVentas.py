@@ -28,7 +28,8 @@ def descuento_por_categoria(monto,categoria):
 
 def crearFactura(             
                  montofactura,
-                 categoriaVenta                 
+                 categoriaVenta,
+                 cliente                 
                  ):
     
     try:
@@ -37,7 +38,9 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now().strftime("%m/%d/%Y, %H:%M:%S")
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura 
+        ofactura.categoriaVenta = categoriaVenta  
+        ofactura.nombreCliente = cliente     
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
