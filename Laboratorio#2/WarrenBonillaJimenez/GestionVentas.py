@@ -7,6 +7,7 @@ formatoConseFact = "FACT#{0}"
 consecutivoFactura = 1
 
 
+#codigo hecho por Warren
 def encabezadoSistema():
     print("----------------------------------")   
     print("Opción #1 : Crear facturas")

@@ -24,20 +24,10 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura
-        if (categoria == "a"):
-            descu = monto - 0,5
-        elif (categoria == "b"):
-            descu = monto - 0.10
-        elif (categoria == "c"):
-            descu = monto - input ("inserte el monto del descuento")
-            descu = monto - desc2
-
-
+        ofactura.montofactura = montofactura        
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
-        
         #n = 2
         #x = 0
         #resultado = n / x
@@ -49,7 +39,23 @@ def crearFactura(
     except BaseException:
         print('Existe un error al crear la factura')
     
+def descuentoproductos():    
+    Monto_descuento_CA = 0.05
+    Monto_descuento_CB = 0.10
     
+        
+    Categoria_Venta = int(input("Ingrese la categoria de la venta. 1=A ; 2=B ; 3=C"))
+    Montofactura = input("Ingrese el monto de la venta")
+
+    if (Categoria_Venta == 1):  
+        (Montofactura*Monto_descuento_CA)+Montofactura
+    elif (Categoria_Venta == 2):
+        (Montofactura*Monto_descuento_CB)+Montofactura
+    elif (Categoria_Venta == 3):
+        Monto_descuento_CC = input("Ingrese el descuento en decimales. ej=0.10 para 10%") 
+        (Montofactura*Monto_descuento_CC) + Montofactura  
+
+
   
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
@@ -57,11 +63,6 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
-        print("float(cliente{nombrecliente}), categoria {categoriaventa}")
-        print("el monto de la factura total es ",n.montofactura)
-
-
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
-    

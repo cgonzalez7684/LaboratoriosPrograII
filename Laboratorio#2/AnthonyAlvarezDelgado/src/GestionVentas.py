@@ -55,7 +55,7 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
-        print(f'Cliente {n.nombreCliente}, categoria {n.categoriaVenta}')
+        print(f'Cliente {n.nombreCliente}, categoria de descuento {n.categoriaVenta}')
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
