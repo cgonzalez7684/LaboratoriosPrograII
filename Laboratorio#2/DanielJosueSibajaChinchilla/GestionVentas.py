@@ -25,8 +25,7 @@ def crearFactura(
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
         ofactura.montofactura = montofactura  
-        ofactura = categoria
-        ofactura.calculaDescuento()
+        ofactura.calculaDescuento(categoria)
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
@@ -51,5 +50,6 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
+        print("El monto de la factura con descuento es de: " , n.monto_con_descuento , "\n")
         
 
