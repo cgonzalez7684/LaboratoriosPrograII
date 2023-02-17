@@ -34,7 +34,7 @@ def crearFactura(
             ofactura.decuento = 0.1
         elif categoriaVenta == "C" or "c":
             ofactura.descuento = int(input("Digite el porcentaje del descuento: "))/100
-        ofactura.monto -= montofactura* ofactura.descuento
+        ofactura.montofactura -= montofactura* ofactura.descuento
               
         #n = 2
         #x = 0
@@ -57,5 +57,10 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
+        print("El descuento de la factura es ",n.descuento*100) 
+        print("La fecha de la factura es ",str(n.fechafactura))
+        print("El impuesto de la factura es ",n.impuestofactura)
+        print("El nombre del cliente de la factura es ",n.nombreCliente)
+          
         
 

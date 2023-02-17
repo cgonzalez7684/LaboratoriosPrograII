@@ -24,17 +24,16 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura  
+        ofactura = categoriaVenta
+        ofactura.calculaDescuento()
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
         #x = 0
         #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
-        
+    #consecutivoFactura += 1 
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
@@ -52,5 +51,3 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        
-

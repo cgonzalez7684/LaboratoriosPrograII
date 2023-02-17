@@ -24,17 +24,22 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura       
+        if(categoria ='a'):
+            descuento = ofactura.montofactura* 0.05
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif(categoria ='b'):
+            descuento = ofactura.montofactura * 0.10
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif(categoria ='c'):
+            imput("digite el monto de descuento a aplicar")
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
         #x = 0
         #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
-        
+    #consecutivoFactura += 1 
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable

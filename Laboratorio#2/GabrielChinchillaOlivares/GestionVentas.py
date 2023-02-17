@@ -31,10 +31,7 @@ def crearFactura(
         #n = 2
         #x = 0
         #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
-        
+    #consecutivoFactura += 1 
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
@@ -53,4 +50,3 @@ def imprimirfacturas():
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
-

@@ -1,8 +1,10 @@
 import GestionVentas as gv
 from Dominio import Factura
 
+def categoriaVenta():
+   categoria = float(input("Digite la categoria: "))
+   gv.crearFactura(categoria)
 
-#Este metodo registrar facturas
 def registrarfactura():
    monto = float(input("Digitar el monto de la factura: "))
    gv.crearFactura(monto)
@@ -10,6 +12,7 @@ def registrarfactura():
 def imprimirfacturas():
     gv.imprimirfacturas()
     
+
 
     
 def main(): 
@@ -23,9 +26,8 @@ def main():
             imprimirfacturas()        
         else: #y sino
             continue
-    print("Esto es fuera del while") 
+    
         
 
 if __name__ == "__main__":
-    main()
-    
+    main()             

@@ -12,10 +12,12 @@ def encabezadoSistema():
     print("Opción #1 : Crear facturas")
     print("Opción #2 : Imprimir facturas")
     print("----------------------------------")
+    
 
 def crearFactura(             
                  montofactura,
-                 categoriaVenta                 
+                 categoriaVenta,
+                 nombreCliente                 
                  ):
     
     try:
@@ -25,16 +27,15 @@ def crearFactura(
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
         ofactura.montofactura = montofactura        
-        ofactura.calculaImpuesto()    
+        ofactura.calculaImpuesto()
+        ofactura.nombreCliente = nombreCliente
+        ofactura.categoriaVenta = categoriaVenta   
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
         #x = 0
         #resultado = n / x
-        #consecutivoFactura += 1 
-        
-        
-        
+    #consecutivoFactura += 1 
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
@@ -48,9 +49,12 @@ def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
     for n in listadoFacturas:
+        print("El nombre del cliente es: " + n.nombreCliente)
+        print("Fecha: " + n.fechafactura)
+        print("La compra es Categoria: " + n.categoriaVenta )
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
-
+    
