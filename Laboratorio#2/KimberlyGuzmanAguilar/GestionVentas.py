@@ -5,7 +5,7 @@ listadoFacturas = [] #list
 
 formatoConseFact = "FACT#{0}" 
 consecutivoFactura = 1
-print("PRUEBA")
+
 
 def encabezadoSistema():
     print("----------------------------------")   
