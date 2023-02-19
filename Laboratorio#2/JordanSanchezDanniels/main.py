@@ -1,15 +1,21 @@
 import GestionVentas as gv
 from Dominio import Factura
 
+
 #Este metodo registrar facturas
 def registrarfactura():
-   gv.crearFactura(1,5000)
+   monto = float(input("Digitar el monto de la factura: "))
+   gv.crearFactura(monto)
    
 def imprimirfacturas():
     gv.imprimirfacturas()
     
-def main():    
+
+    
+def main(): 
+       
     while True:
+        gv.encabezadoSistema()
         opcion = int(input("Digitar la opción sistema: "))
         if (opcion == 1):
             registrarfactura()
@@ -22,3 +28,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
