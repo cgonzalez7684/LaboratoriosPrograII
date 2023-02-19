@@ -7,6 +7,7 @@ formatoConseFact = "FACT#{0}"
 consecutivoFactura = 1
 
 
+#codigo hecho por Warren
 def encabezadoSistema():
     print("----------------------------------")   
     print("Opción #1 : Crear facturas")
@@ -28,19 +29,23 @@ def crearFactura(
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
-        #n = 2
-        #x = 0
-        #resultado = n / x
-        #consecutivoFactura += 1 
+        if (categoriaVenta=="A"):
+            descuento = ofactura.montofactura * 5 /100
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif (categoriaVenta=="B"):
+            descuento = ofactura.montofactura * 10 /100
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif (categoriaVenta=="C"):
+            descuento = input("Ingrese el monto seleccionado para el descuento:")
+            ofactura.montofactura = ofactura.montofactura - descuento
+        
     except ZeroDivisionError:
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
-    
-    
-  
+     
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
