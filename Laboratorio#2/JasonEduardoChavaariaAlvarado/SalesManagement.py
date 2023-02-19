@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 listadoFacturas = [] #list
 
-formatoConseFact = "FACT#{0}" 
+formatoConseFact = "FACT#{0}"  
 consecutivoFactura = 1
 
 
@@ -14,7 +14,7 @@ def encabezadoSistema():
     print("----------------------------------")
 
 
-def crearFactura(             
+def crearFacturas(             
                  montofactura,
                  categoriaVenta                 
                  ):
