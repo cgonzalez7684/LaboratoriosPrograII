@@ -9,4 +9,4 @@ while opciones == "Si" or opciones == "si":
     opciones = input("¿quiere añadir otro instrumento?:")
     
     
-print(f"los instrumentos musicales son:{TipoInstrumento}")
+print(f"los instrumentos musicales son: {ListInstrumentosMusicales}")
