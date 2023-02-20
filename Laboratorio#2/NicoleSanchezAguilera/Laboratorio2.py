@@ -32,7 +32,7 @@ def crearFactura(
         elif (categoria == "c"):
             descu = monto - input ("inserte el monto del descuento")
             descu = monto - desc2
-            
+
 
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
@@ -57,6 +57,10 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
+        print("float(cliente{nombrecliente}), categoria {categoriaventa}")
+        print("el monto de la factura total es ",n.montofactura)
+
+
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
