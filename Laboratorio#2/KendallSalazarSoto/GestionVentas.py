@@ -1,5 +1,5 @@
 from Dominio import Factura
-from datetime import datetime
+from datetime import datetime as dt
 
 listadoFacturas = []  # list
 
@@ -29,7 +29,7 @@ def crearFactura(
         ofactura.idfactura = formatoConseFact.format(
             numFact)  # "FACT#0001" #Quemar el dato / HardCode
         ofactura.nombreCliente = cliente
-        ofactura.fechafactura = datetime.now()
+        ofactura.fechafactura = dt.now().strftime("%m/%d/%Y, %H:%M:%S")
         ofactura.montofactura = montofactura
         ofactura.categoriaVenta = categoriaVenta
         ofactura.impuestofactura = impuestofactura
@@ -70,6 +70,6 @@ def imprimirfacturas():
         print(f"Fecha: {n.fechafactura}")
         print(f"Categoría: {n.categoriaVenta}")
         print(f"Impuesto: {n.impuestofactura}")
-        print(f"Descuento: {n.descuento}")
+        print(f"Descuento: {n.descuento * 100}%")
         print(
             f"Monto Total: {(n.montofactura * 0.13 + n.montofactura) - ((n.montofactura * 0.13 + n.montofactura) * n.descuento)}")
