@@ -4,6 +4,7 @@ class Game:
     
     def __init__(self):
         self.hangman = Hangman() #Inicializacion de la clase 
+        self.game_on = True
         self.option = 0
         
     def game_loop(self):
@@ -27,7 +28,11 @@ class Game:
                 self.hangman.list_printer()
                 
             elif (self.option == 5):
-                print(self.hangman.word_picker())
+                self.hangman.word_picker()
+                self.hangman.fill_user_list()
+                while (self.game_on):
+                    self.hangman.user_list_status()
+                    self.hangman.checker(str(input("\nIngrese una letra: ")))
             else:
                 print("La opción ingresada no es válida")
       
