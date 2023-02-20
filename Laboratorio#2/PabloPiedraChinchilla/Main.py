@@ -6,14 +6,6 @@ from Dominio import Factura
 def registrarfactura():
    monto = float(input("Digitar el monto de la factura: "))
    gv.crearFactura(monto)
-   print("Segun monto de la venta posee un descuento: ")
-   if monto == 10000:
-       descuento = monto*0.05
-   elif monto > 15000:
-       descuento = monto*0.10
-   elif monto > 20000:
-       descuento = monto*
-   
 def imprimirfacturas():
     gv.imprimirfacturas()
     

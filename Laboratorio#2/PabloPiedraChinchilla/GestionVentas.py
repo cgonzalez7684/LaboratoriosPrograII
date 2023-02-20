@@ -6,12 +6,15 @@ listadoFacturas = [] #list
 formatoConseFact = "FACT#{0}" 
 consecutivoFactura = 1
 
+  
 
 def encabezadoSistema():
     print("----------------------------------")   
     print("Opción #1 : Crear facturas")
     print("Opción #2 : Imprimir facturas")
     print("----------------------------------")
+    
+        
     
    
 def crearFactura(             
