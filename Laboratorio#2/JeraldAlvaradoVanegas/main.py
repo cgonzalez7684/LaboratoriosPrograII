@@ -1,3 +1,4 @@
+from xml.sax.handler import DTDHandler
 import GestionVentas as gv
 from Dominio import Factura
 
@@ -5,10 +6,9 @@ from Dominio import Factura
 #Este metodo registrar facturas
 def registrarfactura():
    monto = float(input("Digitar el monto de la factura: "))
-   nombre= str(input("Digite el nombre de la persona a realizar la factura: "))
-   descuento = str(input("Digite el descuento a conveniencia las opciones son A=5%, B=10%, C=Descuento a su parecer"))
-   gv.crearFactura(monto, descuento, nombre)
+   gv.crearFactura(monto)
 
+   
 def imprimirfacturas():
     gv.imprimirfacturas()
     
@@ -30,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
