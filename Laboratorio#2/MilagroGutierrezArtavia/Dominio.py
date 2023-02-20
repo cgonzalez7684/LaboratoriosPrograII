@@ -12,3 +12,4 @@ class Factura:
         return self.impuestofactura
     
 listadoFacturas = []
+print()

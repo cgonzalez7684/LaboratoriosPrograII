@@ -9,7 +9,7 @@ def registrarfactura():
    
 def imprimirfacturas():
     gv.imprimirfacturas()
-    
+    print()
 
     
 def main(): 

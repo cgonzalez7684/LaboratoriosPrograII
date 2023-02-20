@@ -38,7 +38,7 @@ def crearFactura(
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
-    
+    print()
     
   
 def imprimirfacturas():
