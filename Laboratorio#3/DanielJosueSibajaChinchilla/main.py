@@ -1,36 +1,38 @@
-import GestionVentas as gv
-from Dominio import Factura
+from Hangman import Hangman
 
-
-#Este metodo registrar facturas
-def registrarfactura():
-   monto = float(input("Digitar el monto de la factura: "))
-   
-   categoria = int(input("Digite el la categoria de la factura: \n1-A\n2-B\n3-C\n\n"))
-   while categoria <= 0 or categoria > 3:
-       print ("Intente de nuevo, la categoria seleccionada no es valida")
-       categoria = int(input("Digite la categoria de la factura: \n1-A\n2-B\n3-C\n\n"))
-   
-   gv.crearFactura(monto, categoria)
-   
-def imprimirfacturas():
-    gv.imprimirfacturas()
+class Game:
     
-
-def main(): 
-       
-    while True:
-        gv.encabezadoSistema()
-        opcion = int(input("Digitar la opción sistema: \n"))
-        if (opcion == 1):
-            registrarfactura()
-        elif (opcion == 2):  #y sino si
-            imprimirfacturas()        
-        else: #y sino
-            continue
-    print("Esto es fuera del while") 
+    def __init__(self):
+        self.hangman = Hangman() #Inicializacion de la clase 
+        self.option = 0
+        
+    def game_loop(self):
+        while True:
+            self.hangman.menu()
+            self.option = int(input())
+            if (self.option == 1):
+                self.hangman.add(str(input("\nIngrese la palabra que desee agregar a la lista: ")))
+                
+            elif (self.option == 2):
+                self.hangman.list_printer()
+                self.hangman.remove(int(input("\nIngrese el numero de posicion de la palabra que desea eliminar: ")))
+                
+            elif (self.option == 3):
+                self.hangman.list_printer()
+                self.pos = int(input("\nIngrese el numero de posicion de la palabra que desea modificar: "))
+                self.word = str(input("\nIngrese la modificacion: "))
+                self.hangman.modify(self.pos, self.word)
+                
+            elif (self.option == 4):
+                self.hangman.list_printer()
+                
+            elif (self.option == 5):
+                print(self.hangman.word_picker())
+            else:
+                print("La opción ingresada no es válida")
+      
         
 
 if __name__ == "__main__":
-    main()
+    Game().game_loop()
     
