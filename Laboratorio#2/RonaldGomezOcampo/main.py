@@ -1,17 +1,16 @@
 import GestionVentas as gv
 from Dominio import Factura
 
-
 #Este metodo registrar facturas
 def registrarfactura():
-   monto = float(input("Digitar el monto de la factura: "))
-   gv.crearFactura(monto)
+    monto = float(input("Digitar el monto de la factura: "))
+    categoria = str(input("Indique la categoria del producto: "))
+    nombre = str(input("Ingrese el nombre del cliente: "))
+    gv.crearFactura(montofactura=monto,categoriaVenta=categoria,nombrecliente=nombre)
    
 def imprimirfacturas():
     gv.imprimirfacturas()
-    
-
-    
+  
 def main(): 
        
     while True:

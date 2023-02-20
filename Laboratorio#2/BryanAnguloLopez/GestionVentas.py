@@ -14,8 +14,9 @@ def encabezadoSistema():
     print("----------------------------------")
 
 def crearFactura(             
+                 cliente,
                  montofactura,
-                 categoriaVenta                 
+                 categoriaVenta,               
                  ):
     
     try:
@@ -24,10 +25,22 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
-        ofactura.calculaImpuesto()    
+        ofactura.categoriaVenta = categoriaVenta
+        ofactura.nombreCliente = cliente
+        if (categoriaVenta == "A"):
+            ofactura.montofactura = montofactura - (montofactura * 0.05)
+            ofactura.calculaImpuesto() 
+        elif (categoriaVenta == "B"):
+            ofactura.montofactura = montofactura - (montofactura * 0.1)
+            ofactura.calculaImpuesto() 
+        elif (categoriaVenta == "C"):
+            desc = int(input("Cual es el descuento deseado?"))
+            ofactura.montofactura = montofactura - (montofactura * (desc / 100))
+            ofactura.calculaImpuesto() 
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
+
+
         #n = 2
         #x = 0
         #resultado = n / x
@@ -47,7 +60,8 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
-        print("El monto de la factura es ",n.montofactura) 
+        print("Cliente: ", n.nombreCliente, "La categoría de la venta es: ", n.categoriaVenta)
+        print("El monto de la factura es ",n.montofactura, "colones") 
         #El monto de la factura es 458789
         
 
