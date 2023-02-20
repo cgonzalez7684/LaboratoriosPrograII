@@ -15,7 +15,7 @@ def encabezadoSistema():
 
 def crearFactura(             
                  montofactura,
-                 categoriaVenta                 
+                 categoriaVenta                
                  ):
     
     try:
@@ -24,10 +24,30 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
+        ofactura.montofactura = montofactura       
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
+
+        while True:
+            print("----------------------------------")
+            print("Venta por categoría A")
+            print("Venta por categoría B")
+            print("Venta por categoría C")
+            categoriaVenta = input("Seleecione la venta de categoria \n")[0].upper()
+            print(f"Usted selecciono {categoriaVenta}")
+            print("----------------------------------")
+            
+            if (categoriaVenta == "A"):
+                montoDescuentoA = montofactura - 0.05
+            elif (categoriaVenta == "B"):
+                montoDescuentoB = montofactura - 0.1
+            elif (categoriaVenta == "C"):
+                montoDescuento = input("Digite el monto de descuento: ".format)
+                montoDescuentoC = montofactura - montoDescuento/100
+            else:
+                break
+            
         #n = 2
         #x = 0
         #resultado = n / x
@@ -38,9 +58,8 @@ def crearFactura(
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
-    
-    
-  
+
+
 def imprimirfacturas():
     #iterar es saltar de elemento a elemento dentro de la colección
     
@@ -49,3 +68,8 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
+        print("Monto de la factura más el descuento por categorias: ")
+        print("Categoria A: ",n.montoDescuentoA)
+        print("Categoria B: ",n.montoDescuentoB)
+        print("Categoria C: ",n.montoDescuentoC)
+        print("----------------------------------")
