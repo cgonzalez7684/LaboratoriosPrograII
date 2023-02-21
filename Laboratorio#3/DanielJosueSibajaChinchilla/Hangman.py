@@ -157,7 +157,6 @@ class Hangman:
                 self.user_list.insert(i, letter)
         if letter not in self.user_list:
             self.failures += 1
-            print(self.failures)
  
     def game_status(self):
         print(self.stages[self.failures])
