@@ -32,11 +32,13 @@ class Game:
                 self.hangman.fill_user_list()
                 while (self.game_on):
                     self.hangman.user_list_status()
-                    self.hangman.checker(str(input("\nIngrese una letra: ")))
+                    self.hangman.check_input(str(input("\nIngrese una letra: ")))
+                    if (self.hangman.game_over()):
+                        print("\n**********Game over**********\n",
+                              "\nPalabra a encontrar: " , self.hangman.selected_word, "\n")
+                        break
             else:
-                print("La opción ingresada no es válida")
-      
-        
+                print("\nLa opción ingresada no es válida\n")
 
 if __name__ == "__main__":
     Game().game_loop()

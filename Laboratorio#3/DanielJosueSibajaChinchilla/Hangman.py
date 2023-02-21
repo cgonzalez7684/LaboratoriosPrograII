@@ -7,6 +7,8 @@ class Hangman:
         self.selected_word = ""
         self.split_word = [] #Lista donde la palabra escogida se encuentra dividida por letra
         self.user_list = [] #Lista para almacenar el progreso del usuario durante el juego
+        self.failures = 0
+        
     
     def remove(self, position):
         self.word_list.pop(position)
@@ -49,9 +51,26 @@ class Hangman:
         print(" ".join(self.user_list))
     
     
-    def checker (self, letter):
+    def check_input (self, letter):
         for i in range (len(self.split_word)):
             if letter.lower() == self.split_word[i].lower():
                 self.user_list.pop(i)
                 self.user_list.insert(i, letter)
-                
+        if letter not in self.user_list:
+            self.failures += 1
+            print(self.failures)
+ 
+    def failed_attempts(self):
+        pass
+        
+    
+    
+    def game_over(self):
+        self.user_word = ""
+        for i in self.user_list:
+            self.user_word += i  
+        if self.user_word.lower() == self.selected_word.lower() or self.failures > 9:
+            self.user_list.clear()
+            self.failures = 0
+            return True
+        
