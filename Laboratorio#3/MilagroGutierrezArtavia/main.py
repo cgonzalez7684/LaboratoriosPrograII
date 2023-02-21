@@ -4,7 +4,7 @@ opcion = None
 #menú de opciones
 def main():
   while True:
-      opcion = int(input("\nMenú: \n 1. Agregar nuevas asignaturas \n 2. Eliminar asignaturas \n 3. Modificar asignaturas \n 4. Mostrar asignaturas \n 5. Salir del menú de opciones \n Elija una opción: "))
+      opcion = int(input("\nMenú: \n 1. Agregar nuevas asignaturas \n 2. Eliminar asignaturas \n 3. Modificar asignaturas \n 4. Mostrar asignaturas \n 5. Salir del menú de opciones\n Elija una opción: "))
       if opcion == 1:
           agregar_asignatura()
       elif opcion == 2:
@@ -22,7 +22,7 @@ def main():
    #funciones 
 def agregar_asignatura():
     posicion = None
-    letra = input("Si desea agregar la asignatura al final de la lista digite la letra n, si desea agregar la asignatura en una posicion especifica digite i: ")
+    letra = input("\nSi desea agregar la asignatura al final de la lista digite la letra n, \nsi desea agregar la asignatura en una posición específica digite la letra i: ")
     print()
     if letra == "i":
         posicion = int(input("Digite el índice: "))
