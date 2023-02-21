@@ -1,3 +1,4 @@
+
 import random
 
 class Hangman:
@@ -8,6 +9,108 @@ class Hangman:
         self.split_word = [] #Lista donde la palabra escogida se encuentra dividida por letra
         self.user_list = [] #Lista para almacenar el progreso del usuario durante el juego
         self.failures = 0
+        self.stages = ["""  
+                        
+                                   
+                                   
+                                
+                                      
+                                
+                        
+                    _________
+                        """, 
+                        """  
+                        
+                        |           
+                        |           
+                        |           
+                        |             
+                        |          
+                        |
+                    ____|____
+                        """,
+                        
+                        """  
+                        -------------
+                        |           
+                        |           
+                        |           
+                        |              
+                        |          
+                        |
+                    ____|____
+                        """, 
+                        
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           
+                        |               
+                        |          
+                        |
+                    ____|____
+                        """,
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |                 
+                        |          
+                        |
+                    ____|____
+                        """,
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |           |    
+                        |           
+                        |
+                    ____|____
+                        """,
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |         --|      
+                        |           
+                        |
+                    ____|____
+                        """, 
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |         --|--      
+                        |           
+                        |
+                    ____|____
+                        """,
+                        """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |         --|--      
+                        |          / 
+                        |
+                    ____|____
+                        """,
+                           """  
+                        -------------
+                        |           |
+                        |           |
+                        |           O
+                        |         --|--      
+                        |          / \\
+                        |
+                    ____|____
+                        """]
         
     
     def remove(self, position):
@@ -46,10 +149,6 @@ class Hangman:
         for i in range(len(self.split_word)):
             self.user_list.append("_")
     
-    def user_list_status(self):
-        #for i in range(len(self.split_word)):
-        print(" ".join(self.user_list))
-    
     
     def check_input (self, letter):
         for i in range (len(self.split_word)):
@@ -60,8 +159,9 @@ class Hangman:
             self.failures += 1
             print(self.failures)
  
-    def failed_attempts(self):
-        pass
+    def game_status(self):
+        print(self.stages[self.failures])
+        print(" ".join(self.user_list))     
         
     
     
@@ -69,8 +169,19 @@ class Hangman:
         self.user_word = ""
         for i in self.user_list:
             self.user_word += i  
-        if self.user_word.lower() == self.selected_word.lower() or self.failures > 9:
+        if self.user_word.lower() == self.selected_word.lower():
             self.user_list.clear()
             self.failures = 0
+            print("\n*******Felicidades! Ha encontrado la palabra*******\n",
+                  "\nPalabra encontrada: ", self.selected_word)
             return True
+        elif self.failures >= 9:
+            self.user_list.clear()
+            self.game_status()
+            self.failures = 0
+            print("\n*******No logro encontrar la palabra*******\n",
+                  "\nPalabra a encontrar: ", self.selected_word)
+            return True
+        
+            
         
