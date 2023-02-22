@@ -1,51 +1,56 @@
-list = ["Cantidad de Equipos en Stock"]
+lista = [] #Crea la lista
 
-#Añadir datos en la lista
-print ("Los valores de la lista son los siguientes: \n", list)
-valora = input("\nColoque el valor que desea añadir")
-list.append(valora)
-print("La siguiente lista muestra el valor añadido\n", list)
+def agregar():
+   print("Los valores de su lista son: \n", lista)
+   valora = input("\nDigite el valor que desea agregar a la lista: ")
+   lista.append(valora)
+   print("Su lista actualizada es: \n", lista)
+   return
 
-#Eliminar datos de la lista
-print("Los valores de la lista son los siguientes: \n", list)
-valorb = input("\nColoque el valor que desea eliminar")
-list.remove(valorb)
-print("La siguiente lista muestra el valor eliminado\n", list)
+def eliminar():
+   print("Los valores de su lista son: \n", lista)
+   valorb = input("\nDigite el valor que desea eliminar de la lista: ")
+   lista.remove(valorb)
+   print("Su lista actualizada es: \n", lista)
+   return
 
-#Modificar datos de la lista
-print("Los valores de la lista son los siguientes: \n", list)
-valorc = input("\nColoque el dato que desea modificar")
-posi = list.index(valorc)
-valord = input("Coloque el siguiente valor a modificar")
-list[posi] = valord
-print("Su lista con las modificaciones realizadas es la siguiente \n", list)
+def modificar():
+   print("Los valores de su lista son: \n", lista)
+   valorc = input("\nDigite el valor de la lista que desea modificar: ")
+   posi = lista.index(valorc)
+   valord = input ("\nDigite el nuevo valor que desea modificar")
+   lista[posi] = valord
+   print("Su lista actualizada es: \n", lista)
+   return
 
+def verlista():
+   print("\nLos valores de su lista son: \n", lista)
+   return
 
-     
-    while True:
-         print ("----------------------------------")
-         print ("Primer : Agregar dato a la lista ")
-         print ("Segundo : Eliminar dato de la lista")
-         print ("Tercero : Modificar dato de la lista ")
-         print ("Cuarto : Ver la lista completa")
-         print ("Quinto : Salir del sistema")
-         print ("==================================")
-         opcion = input("Digite una opción del sistema: ")
-         
-         if(opcion =="1"):
-           agregar()
-         elif (opcion =="2"):
-           eliminar()
-         elif (opcion =="3"):
-            modificar()
-         elif (opcion =="4"):
-            verlista()
-         elif (opcion == "5"):
-            print("\n¡Hasta luego!")
-            break 
-         else:
-            print("Opcion denegada\n Intente de nuevo")
-            continue
-       
-    
+def menu():
+   
+   while True:
+       print ("-----------------------------------------------")
+       print ("Alternativa#1 : Agregar el dato a la lista")
+       print ("Alternativa#2 : Eliminar el dato de la lista")
+       print ("Alternativa#3 : Modificar el dato de la lista")
+       print ("Alternativa#4 : Ver lista COmpleta")
+       print ("Alternativa#5 : Salir del Sistema")
+       print ("================================================")
+       alternativa = input("Digite una alternativa del sistema: ")
+       
+       if(alternativa =="1"):
+          agregar()
+       elif(alternativa =="2"):
+         eliminar()
+       elif(alternativa =="3"):
+         modificar()
+       elif(alternativa =="4"):
+          verlista()
+       elif(alternativa =="5")
+         print("\nNos vemos en la próxima")
+         continue
+      
 menu()
+
+       
