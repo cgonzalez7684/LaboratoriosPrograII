@@ -1,3 +1,4 @@
+# gestion ventas
 from Dominio import Factura
 from datetime import datetime as dt
 
