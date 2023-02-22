@@ -2,4 +2,4 @@
 # Prueba 
 # semana 3 jaja
 # otra prueba
-print("Hola mundo de Yadir Vega Espinoza")
+print("Hola mundo de Yadir Vega Espinoza.")
