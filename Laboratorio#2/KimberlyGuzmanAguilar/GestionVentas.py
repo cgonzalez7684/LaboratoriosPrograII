@@ -61,7 +61,7 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        print("Nombre del cliente: n.nombreCliente")
+        print("Nombre del cliente: " n.nombreCliente)
         print("Categoria de descuento: ",n.categoriaVenta)
         print("Fecha de factura: ", n.fechafactura)
 
