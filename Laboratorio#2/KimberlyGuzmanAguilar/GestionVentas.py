@@ -42,7 +42,7 @@ def crearFactura(
         #x = 0
         #resultado = n / x
     #consecutivoFactura += 1 
-    listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
+        listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
 
     except ZeroDivisionError:
