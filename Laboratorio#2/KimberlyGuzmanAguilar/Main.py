@@ -6,6 +6,8 @@ from Dominio import Factura
 def registrarfactura():
    monto = float(input("Digitar el monto de la factura: "))
    categoriaVenta = input("Cual es la categoria del descuento?")
+   if (categoriaVenta=="C" or "c"):
+            descuento = input("Ingrese el monto seleccionado para el descuento: ")
    cliente = input("Cual es el nombre del cliente?")
    gv.crearFactura(monto,categoriaVenta,  cliente)
    
