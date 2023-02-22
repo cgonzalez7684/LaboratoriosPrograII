@@ -12,7 +12,13 @@ def encabezadoSistema():
     print ("Opción #2 : Imprimir Facturas")
     print ("==================================")
 
-def crearFactura(montofactura, categoriaventa, nombrecliente):
+def menudescuentos():
+    print ("\nCategoria #a : Aplica descuento de 5% ")
+    print ("Categoria #b : Aplica descuento de 6%")
+    print ("Categoria #c : Se ingresa manual el descuento que desea hacer")
+    print ("==================================")
+
+def crearFactura(montofactura, categoriaventa):
 
     ofactura = Factura()
     global consecutivoFactura
@@ -21,7 +27,7 @@ def crearFactura(montofactura, categoriaventa, nombrecliente):
     ofactura.idfactura = formatoConsecFactura.format(numFactura)
     ofactura.fechafactura = dt.now
     ofactura.montofactura = montofactura
-    ofactura.nombrecliente = nombrecliente
+    
     ofactura.categoriaventa = categoriaventa
     ofactura.calcularImpuesto()
     ofactura.calcularDescuento()
@@ -32,8 +38,7 @@ def crearFactura(montofactura, categoriaventa, nombrecliente):
 def imprimirfacturas():
 
     for n in listadoFacturas :
-        print ("=============Datos de factura=================")
-        print ("Nombre del cliente: " , n.nombrecliente )        
+        print ("=============Datos de factura=================")       
         print ("Id factura:  ", n.idfactura)
         print ("El monto de la factura es: ", n.montofactura)
         print ( "Categoria de venta: ",  n.categoriaventa)
