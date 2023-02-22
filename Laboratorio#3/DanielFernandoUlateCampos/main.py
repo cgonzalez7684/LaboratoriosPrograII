@@ -47,7 +47,7 @@ def menu():
          modificar()
        elif(alternativa =="4"):
           verlista()
-       elif(alternativa =="5")
+       elif(alternativa =="5"):
          print("\nNos vemos en la próxima")
          continue
       
