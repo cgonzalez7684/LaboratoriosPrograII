@@ -28,6 +28,8 @@ def main():
             imprimifacturas()
         else:
             continue
+    print("Esto es fuera del while") 
+        
 
 if __name__ == "__main__":
     main()
