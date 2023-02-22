@@ -36,8 +36,8 @@ def crearFactura(
             descuento = ofactura.montofactura * 10 /100
             ofactura.montofactura = ofactura.montofactura - descuento
         elif (categoriaVenta=="C" or "c"):
-            descuento = int(input("Ingrese el monto seleccionado para el descuento:"))
-            ofactura.montofactura = ofactura.montofactura - (descuento /100)
+            descuento = float(input("Ingrese el monto seleccionado para el descuento: "))
+            ofactura.montofactura = ofactura.montofactura - (str(descuento) /100)
         #n = 2
         #x = 0
         #resultado = n / x
