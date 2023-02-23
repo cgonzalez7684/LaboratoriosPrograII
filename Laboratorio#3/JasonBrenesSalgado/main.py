@@ -2,7 +2,7 @@ import GestionListado as gl
 
 
 def main():
-    1
+    
     while True:
         gl.encabezadoMenu()
         
