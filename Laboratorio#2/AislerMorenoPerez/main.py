@@ -8,7 +8,7 @@ def registrarfactura():
    categoriaVenta = input("Digita la catergoria de la venta: ")
    monto = float(input("Digitar el monto de la factura: "))
    montoReal = 0
-
+    
    if (categoriaVenta == "A" or categoriaVenta == "a"):
     montoReal = monto - (monto * 0.05)
     gv.crearFactura(montoReal,categoriaVenta,Nombre)
