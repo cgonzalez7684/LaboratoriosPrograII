@@ -63,5 +63,5 @@ def imprimirfacturas():
         #El monto de la factura es 458789
         print("Nombre del cliente: ", n.nombreCliente)
         print("Categoria de descuento: ",n.categoriaVenta)
-        print("Fecha de factura: ", n.fechafactura)
+        print("Fecha de factura: ", dt.now)
 
