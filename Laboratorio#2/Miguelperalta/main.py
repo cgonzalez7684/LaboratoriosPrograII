@@ -1,31 +1,35 @@
 import GestionVentas as gv
 from Dominio import Factura
+from GestionVentas import crearFactura, listadoFacturas, imprimirFacturas
 
 
-#Este metodo registrar facturas
-def registrarfactura():
+# Este metodo registrar facturas
+def registrarFactura(opcion):
    monto = float(input("Digitar el monto de la factura: "))
-   gv.crearFactura(monto)
-   
-def imprimirfacturas():
-    gv.imprimirfacturas()
-    
+   categoriaVenta = str(input("Digite la categoria: "))
+   factura = crearFactura(monto, categoriaVenta)
+   if factura is not None:
+      print("Factura registrada con éxito!")
+      return factura    
 
-    
+def imprimir(factura):
+    if factura is not None:
+     factura.impresion()
+
 def main(): 
-       
+    factura = None
     while True:
-        gv.encabezadoSistema()
+        print("----------------------------------")
+        print("Opción #1 : Crear facturas")
+        print("Opción #2 : Imprimir facturas")
+        print("----------------------------------")
+        
         opcion = int(input("Digitar la opción sistema: "))
         if (opcion == 1):
-            registrarfactura()
-        elif (opcion == 2):  #y sino si
-            imprimirfacturas()        
-        else: #y sino
-            continue
-    print("Esto es fuera del while") 
+            factura = registrarFactura(opcion)
         
+        elif (opcion == 2):
+            imprimir(factura)
 
 if __name__ == "__main__":
     main()
-    

@@ -13,21 +13,25 @@ def encabezadoSistema():
     print("Opción #1 : Crear facturas")
     print("Opción #2 : Imprimir facturas")
     print("----------------------------------")
+    
+    
 
 
 def crearFactura(
     montofactura,
-    categoriaVenta
+    categoriaVenta,
+    fecha,
+    nombreCliente,
 ):
 
     try:
         ofactura = Factura()  # instanciar una clase en un objeto (ya existe en memoria)
         global consecutivoFactura
         numFact = str(consecutivoFactura).rjust(5, '0')
-        ofactura.idfactura = formatoConseFact.format(
+        ofactura.id_factura = formatoConseFact.format(
             numFact)  # "FACT#0001" #Quemar el dato / HardCode
-        ofactura.fechafactura = dt.now
-        ofactura.montofactura = montofactura
+        ofactura.fecha = dt.now
+        ofactura.monto = montofactura
         ofactura.calculaImpuesto()
         # es el metodo que me permite agregar elementos a la lista
         listadoFacturas.append(ofactura)
@@ -53,3 +57,5 @@ def imprimirfacturas():
         # casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ", n.montofactura)
         # El monto de la factura es 458789
+        
+        
