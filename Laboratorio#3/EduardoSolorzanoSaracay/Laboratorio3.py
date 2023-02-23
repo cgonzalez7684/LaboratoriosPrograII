@@ -26,4 +26,4 @@ while (menu != 5):
         Materias.remove(input())
     elif (menu == 4):
         print(Materias)
-        print("Ha ingresado un total de:",Materias.count, "materias")
+        print("Ha ingresado un total de:", len(Materias), "materias")
