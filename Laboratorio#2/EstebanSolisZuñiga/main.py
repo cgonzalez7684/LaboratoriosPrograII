@@ -15,9 +15,8 @@ def registrarfactura():
    gv.crearFactura(monto, categoria, nombre)
    
 def imprimirfacturas():
-    gv.imprimirfacturas()
+   gv.imprimirfacturas()
     
-
     
 def main(): 
        

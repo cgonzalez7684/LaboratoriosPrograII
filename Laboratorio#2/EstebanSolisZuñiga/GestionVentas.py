@@ -63,7 +63,7 @@ def imprimirfacturas():
         print ("La categoria de venta es: ",  n.categoriaVenta)
         print ("El impuesto de ventas es:  " , n.calculaImpuesto())
         print ("El monto a pagar con descuento es: " , n.calculaDescuento())
-        print ("La eecha de creación de la factura es:  " , n.fechafactura())
+        print ("La fecha de creación de la factura es:  " , n.fechafactura())
         print ("-----------------------------------------")
         
         
