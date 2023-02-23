@@ -28,6 +28,7 @@ def crearFactura(
         ofactura.fechafactura = dt.now()    
         ofactura.montofactura = montofactura    
         ofactura.nombreCliente = nombreCliente
+        ofactura.categoriaVenta = categoriaVenta
         ofactura.impuestofactura = impuestofactura    
         if (categoriaVenta == "A" or "a"):
             descuento = ofactura.montofactura * (5/100)
@@ -44,7 +45,7 @@ def crearFactura(
         elif (categoriaVenta == "C" or "c"):
             descuentotemp = int(input("Ingrese el monto seleccionado para el descuento: "))
             descuento = ofactura.montofactura * (descuentotemp/100)
-            ofactura.montofactura= ofactura.montofactura - descuento 
+            ofactura.montofactura= (ofactura.montofactura - descuento)
             ofactura.impuestofactura = ofactura.montofactura * 0.13
             ofactura.montofactura = ofactura.montofactura + impuestofactura
         
