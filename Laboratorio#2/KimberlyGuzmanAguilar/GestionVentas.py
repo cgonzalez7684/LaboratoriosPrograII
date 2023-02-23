@@ -30,13 +30,13 @@ def crearFactura(
         ofactura.nombreCliente = nombreCliente
         ofactura.impuestofactura = impuestofactura    
         if (categoriaVenta == "A" or "a"):
-            descuento = ofactura.montofactura * 5/100
+            descuento = ofactura.montofactura * (5/100)
             ofactura.montofactura= ofactura.montofactura - descuento 
             ofactura.impuestofactura = ofactura.montofactura * 0.13
             ofactura.montofactura = ofactura.montofactura + impuestofactura
 
         elif (categoriaVenta == "B" or "b"):
-            descuento = ofactura.montofactura * 10/100
+            descuento = ofactura.montofactura * (10/100)
             ofactura.montofactura= ofactura.montofactura - descuento 
             ofactura.impuestofactura = ofactura.montofactura * 0.13
             ofactura.montofactura = ofactura.montofactura + impuestofactura
@@ -71,6 +71,6 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         print("Nombre del cliente: ", n.nombreCliente)
-        print("Categoria de decuento:", n.categoriaVenta)
+        print("Categoria del descuento:", n.categoriaVenta)
         print("Fecha de factura: ", dt.now())
         #El monto de la factura es 458789
