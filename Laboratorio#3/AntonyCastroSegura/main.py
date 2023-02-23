@@ -28,8 +28,6 @@ try:
 except BaseException:
         print('Existe un error ')
          
-def agregar(valor):
-    Lista.append(valor)
 
 def recorrer():
     for n in Lista:
