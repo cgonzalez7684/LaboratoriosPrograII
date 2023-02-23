@@ -9,8 +9,7 @@ def encabezadoMenu():
     print ("Opcion #4 imprimir el listado de frutas agregadas")
     print ("=============================")
 
-def crearListado(frutas):
-    frutas = frutas
+def crearListado(frutas):    
     listadoFrutas.append (frutas)
     
 
