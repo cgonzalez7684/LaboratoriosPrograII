@@ -73,4 +73,5 @@ def imprimirfacturas():
         print("Nombre del cliente: ", n.nombreCliente)
         print("Categoria del descuento:", n.categoriaVenta)
         print("Fecha de factura: ", dt.now())
+        print("Impuesto de la factura (I.V.A): ",n.impuestofactura)
         #El monto de la factura es 458789
