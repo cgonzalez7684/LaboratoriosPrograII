@@ -9,9 +9,8 @@ consecutivoFactura = 1
 
 def encabezadoSistema():
     print("----------------------------------")   
-    print("Opción #A : 5% de descuento")
-    print("Opción #B : 10% de descuento")
-    print("Opción #C : Por favor ingre el monto del descuento")
+    print("Opción #1 : Crear facturas ")
+    print("Opción #B : Imprimir facturas")
     print("----------------------------------")
 
 def crearFactura(             
@@ -29,7 +28,15 @@ def crearFactura(
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) 
         consecutivoFactura = consecutivoFactura + 1
-        
+        if (categoriaVenta == "A"):
+            descuento = ofactura.montofactura * 0.05
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif(categoriaVenta == "B"): 
+            descuento = ofactura.montofactura * 0.10
+            ofactura.montofactura = ofactura.montofactura - descuento
+        elif(categoriaVenta == "C"):
+            descuento = int(input("Por favor indique el monto del descuento: "))
+            ofactura.montofactura = ofactura.montofactura - descuento
     
     except BaseException:
         print('Existe un error al crear la factura')

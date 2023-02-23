@@ -2,8 +2,9 @@ import GestionVentas as gv
 from Dominio import Factura
 
 def registrarfactura():
-   monto = float(input("Digite la categoria de venta: "))
-   gv.crearFactura(monto)
+   monto = float(input("Por favor digite el monto de la factura: "))
+   categoria = input("Por favor inserte la categoria de venta ya sea A, B o C: ")
+   gv.crearFactura(monto, categoria)
    
 def imprimirfacturas():
     gv.imprimirfacturas()
@@ -14,13 +15,11 @@ def main():
        
     while True:
         gv.encabezadoSistema()
-        opcion = int(input("Digite la categoria de venta: "))
+        opcion = int(input("Por favor digite la opcion que le corresponda: "))
         if (opcion == 1):
             registrarfactura()
         elif (opcion == 2):  
-            registrarfactura()        
-        elif (opcion == 3):  
-            registrarfactura()        
+            imprimirfacturas()               
         else: 
             continue
     
