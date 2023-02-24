@@ -15,7 +15,7 @@ def encabezadoSistema():
 
 def crearFactura(             
                  montofactura,
-                 categoria                 
+                 categoriaVenta                 
                  ):
     
     try:
@@ -24,10 +24,21 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura  
-        ofactura.calculaDescuento(categoria)
+        ofactura.montofactura = montofactura        
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
+        consecutivoFactura = consecutivoFactura + 1
+
+        if (ofactura.categoriaVenta=="A"):
+            ofactura=ofactura-(ofactura*0.05)
+        else:
+            if (ofactura.categoriaVenta=="B"):
+                ofactura=ofactura-(ofactura*0.10)
+            else:
+                porcentaje=int(input("Inserta el descuento: "))
+            descuento = ofactura - descuento
+        ofactura.calculaImpuesto()    
+        listadoFacturas.append(ofactura) 
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
         #x = 0
@@ -50,6 +61,5 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        print("El monto de la factura con descuento es de: " , n.monto_con_descuento , "\n")
         
 

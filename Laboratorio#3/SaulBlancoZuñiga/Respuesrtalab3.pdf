@@ -1,0 +1,20 @@
+De que forma podemos agregar, eliminar, modificar y recorrer una estructura tipo 
+list? 
+Para agregar una estructura en phytom podemos usar el metodo  
+lista = [1, 2, 3, 4]
+lista.append(5)
+para el eliminar un elemento ser puede usar el metodo
+lista = [1, 2, 3, 4, 5]
+lista.remove(3)
+para modificar un elemento podemos usar el metodo  
+lista = [1, 2, 3, 4, 5]
+lista[2] = 6
+De que forma podemos contar la cantidad de elementos que se encuentran en una 
+colección tipo <list> 
+para contar la cantidad de objetos de una lista usar la funcion lent()
+mi_lista = [1, 2, 3, 4, 5]
+cantidad_elementos = len(mi_lista)
+print(cantidad_elementos)
+5
+Que entiende por indexación de los elementos en una colección de datos. 
+son  los procesos unicos de cantidad elemento en una coleccion, con el fin de poder asi manipularlos individualmente

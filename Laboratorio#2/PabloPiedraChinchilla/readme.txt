@@ -1,0 +1,3 @@
+Profe no le estoy entendiendo practicamente nada, me confundo demaciado con lo de las clase sy objetos,
+si puede brindarnos algun link o detallar un poco mas esa parte se lo agradeceria, entiendo la idea de los ciclos,
+me ayude con lo poco que se y viendo ejemplos, para medio responder...

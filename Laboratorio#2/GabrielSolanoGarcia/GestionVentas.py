@@ -24,7 +24,7 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         #montofactura = ofactura.calculaDescuento(montofactura, categoriaVenta)
         if categoriaVenta == "A":
-            ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
+            ofactura.idfactura =  formatoConseFact.format(numFact) 
             ofactura.descuento = montofactura* 0.05
             ofactura.fechafactura = dt.now    
             ofactura.montofactura = montofactura - ofactura.descuento        
@@ -32,7 +32,7 @@ def crearFactura(
             listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
             consecutivoFactura = consecutivoFactura + 1
         elif categoriaVenta == "B":
-            ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
+            ofactura.idfactura =  formatoConseFact.format(numFact) 
             ofactura.descuento = montofactura* 0.1
             ofactura.fechafactura = dt.now    
             ofactura.montofactura = montofactura - ofactura.descuento      
@@ -40,27 +40,18 @@ def crearFactura(
             listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
             consecutivoFactura = consecutivoFactura + 1
         elif categoriaVenta == "C":
-            print("si entro al if")
-            ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
+            ofactura.idfactura =  formatoConseFact.format(numFact) 
             descuentoAplicar = int(input("Digite el descuento que se le va a hacer a la factura: "))
             ofactura.descuento = montofactura * descuentoAplicar / 100
-            print("si leyo el descuento")
             ofactura.fechafactura = dt.now    
             ofactura.montofactura = montofactura - ofactura.descuento
-            print("si aplico el descuento")
             ofactura.calculaImpuesto()    
             listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
             consecutivoFactura = consecutivoFactura + 1
         else:
             print("Debe de digitar una opcion entre A/B/C")
         
-        #n = 2
-        #x = 0
-        #resultado = n / x
-    #consecutivoFactura += 1 
     except ZeroDivisionError:
-        #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
-        #Informarle al usuario de error con un mensaje mas amigable
         print("Se esta dando una division entre cero")   
     except BaseException:
         print('Existe un error al crear la factura')
