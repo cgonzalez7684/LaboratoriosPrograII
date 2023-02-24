@@ -1,18 +1,18 @@
 ist=[]
 
-def agregarC():
+def agregarS():
     list.append(str(input("Escriba un nuevo numero: ")))
 
-def eliminarC():
+def eliminarS():
     numero = str(input("Escriba el numero que desea eliminar: "))
     list.remove(numero)
 
-def modificarC():
+def modificarS():
     numero = str(input("Escriba el numero que desea modificar: "))
     index = list.index(numero)
     list[index] =str(input("Escriba el nuevo numero: "))
 
-def listaC():
+def listaS():
  print("Los numeros agregados son:", list)
 
 def lista():
