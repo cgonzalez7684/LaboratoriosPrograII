@@ -22,7 +22,7 @@ def lista():
         print("3. Modificar un numero")
         print("4. Ver lista ")
         print("5. Salir de la lista")
-        opcion = int(input("Seleccione una opción"))
+        opcion = int(input("Seleccionar una opcion de las anteriores"))
 
 
         if(opcion=="1"):
