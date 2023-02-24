@@ -27,9 +27,19 @@ def crearFactura(
         ofactura.montofactura = montofactura        
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
-        consecutivoFactura = consecutivoFactura + 1                
+        consecutivoFactura = consecutivoFactura + 1   
+        if (categoriaVenta == "A"):
+            descuento = ofactura.montofactura * 5 / 100
+            ofactura.montofactura = ofactura.montofactura - descuento 
+        elif (categoriaVenta == "B"):
+            descuento = ofactura.montofactura * 10 / 100
+            ofactura.montofactura = ofactura.montofactura - descuento 
+        elif (categoriaVenta == "C"):
+            descuento = input("Ingrese el monto seleccionado para el descuento")
+            ofactura.montofactura = ofactura.montofactura -  descuento
 
-
+        listadoFacturas.append(ofactura)
+        consecutivoFactura = consecutivoFactura + 1 
         #n = 2
         #x = 0
         #resultado = n / x
@@ -49,6 +59,7 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
+        print (f'Cliente {n.nombreCliente}, categoria de descuento {n.categoriaVenta}')
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
         
