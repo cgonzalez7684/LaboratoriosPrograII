@@ -1,0 +1,21 @@
+# Define una lista vacía
+lista = []
+
+# Agrega elementos a la lista
+lista.append("manzana")
+lista.append("banana")
+lista.append("naranja")
+print("Lista después de agregar elementos:", lista)
+
+# Modifica un elemento de la lista
+lista[1] = "pera"
+print("Lista después de modificar un elemento:", lista)
+
+# Elimina un elemento de la lista
+del lista[2]
+print("Lista después de eliminar un elemento:", lista)
+
+# Recorre la lista e imprimir cada elemento
+print("Elementos de la lista:")
+for elemento in lista:
+    print(elemento)

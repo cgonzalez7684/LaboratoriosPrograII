@@ -1,5 +1,5 @@
 from Dominio import Factura
-from datetime import datetime as dt
+import datetime
 
 listadoFacturas = [] #list
 
@@ -15,17 +15,31 @@ def encabezadoSistema():
 
 def crearFactura(             
                  montofactura,
-                 categoria                 
+                 categoriaVenta                 
                  ):
     
     try:
         ofactura = Factura() #instanciar una clase en un objeto (ya existe en memoria)   
         global consecutivoFactura
         numFact = str(consecutivoFactura).rjust(5,'0')
+        fechaAhora = datetime.datetime.now()
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
-        ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura  
-        ofactura.calculaDescuento(categoria)
+        ofactura.fechafactura = fechaAhora.strftime("%d/%m/%Y %H:%M:%S")
+        ofactura.montofactura = montofactura    
+        ofactura.categoriaVenta = categoriaVenta.upper()
+
+        if ofactura.categoriaVenta == "A":
+            ofactura.montofactura = ofactura.montofactura * 0.95
+
+        elif ofactura.categoriaVenta == "B":
+            ofactura.montofactura = ofactura.montofactura * 0.9
+        
+        elif ofactura.categoriaVenta == "C":
+            montoDescuento = int(input("Digite el porcentaje del descuento: "))
+            ofactura.montofactura = ofactura.montofactura * (1 - (montoDescuento/100))
+
+
+
         ofactura.calculaImpuesto()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
@@ -37,8 +51,9 @@ def crearFactura(
         #Mandar registrar el error en bitacoras (Tabla BD / Archivo Txt)
         #Informarle al usuario de error con un mensaje mas amigable
         print("Se esta dando una division entre cero")   
-    except BaseException:
+    except BaseException as e:
         print('Existe un error al crear la factura')
+        print(e)
     
     
   
@@ -50,6 +65,8 @@ def imprimirfacturas():
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
-        print("El monto de la factura con descuento es de: " , n.monto_con_descuento , "\n")
-        
+        print("La fecha de la factura es ",n.fechafactura) 
+        print("El impuesto aplicado a la factura es %.2f" % round(n.impuestofactura, 2)) 
+        #print("El nombre del cliente de la factura es ",n.nombreCliente) ------Comentado porque no se está seteando
+        print("La Categoría de la venta de la factura es ",n.categoriaVenta)
 
