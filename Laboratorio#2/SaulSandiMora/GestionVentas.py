@@ -13,9 +13,16 @@ def encabezadoSistema():
     print("Opción #2 : Imprimir facturas")
     print("----------------------------------")
 
+def tiposDescuentos():
+    print("----------------------------------")   
+    print("Categoría #A : Descuento de 5%")
+    print("Categoría #B : Descuento de 10%")
+    print("Categoría #C : Descuento manual del usuario")
+    print("----------------------------------")
+
 def crearFactura(             
                  montofactura,
-                 categoriaVenta                 
+                 categoriaVenta, nombreCliente                 
                  ):
     
     try:
@@ -24,8 +31,11 @@ def crearFactura(
         numFact = str(consecutivoFactura).rjust(5,'0')
         ofactura.idfactura =  formatoConseFact.format(numFact) #"FACT#0001" #Quemar el dato / HardCode
         ofactura.fechafactura = dt.now    
-        ofactura.montofactura = montofactura        
-        ofactura.calculaImpuesto()    
+        ofactura.montofactura = montofactura
+        ofactura.categoriaVenta = categoriaVenta
+        ofactura.nombreCliente = nombreCliente     
+        ofactura.calculaImpuesto()
+        ofactura.calculaDescuento()    
         listadoFacturas.append(ofactura) #es el metodo que me permite agregar elementos a la lista
         consecutivoFactura = consecutivoFactura + 1
         #n = 2
@@ -47,7 +57,12 @@ def imprimirfacturas():
     for n in listadoFacturas:
         print("---------------{0} {1}".format(n.idfactura, "factura en colones"))
         #casting de dato convirtiendo de numero (int) a cadena de texto (str)
+        print("Nombre del cliente: ",n.nombreCliente)
         print("El monto de la factura es ",n.montofactura) 
         #El monto de la factura es 458789
+        print ( "Categoria de venta: ",  n.categoriaVenta)
+        print ("Impuesto de ventas:  " , n.calculaImpuesto())
+        print ("Monto a pagar con descuento: " , n.calculaDescuento())
+        print ("-----------------------------------------")
+        print ("Fecha de creación :  " , n.fechafactura())
         
-
