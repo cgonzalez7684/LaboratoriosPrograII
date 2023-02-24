@@ -8,7 +8,7 @@ print(edades[1]) #Acceder a un elemento de la lista
 edades.append(31) #Añadir un elemento a la lista
 print("Despues del append: ", edades)
 
-edades[0] = "17" #Cambiar un elemento de la lista
+edades[0] = "17" # type: ignore #Cambiar un elemento de la lista
 
 del edades[8] #Eliminar un elemento de la lista
 
