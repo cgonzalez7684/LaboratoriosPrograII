@@ -17,7 +17,7 @@ def listaS():
 
 def lista():
     while True:
-        print("1. Agregar un nuevo numero")
+        print("1. Agregar un nuevo numero)
         print("2. Eliminar un numero")
         print("3. Modificar un numero")
         print("4. Ver lista ")
@@ -26,12 +26,11 @@ def lista():
 
 
         if(opcion=="1"):
-            agregarC()
+            agregarS()
         elif(opcion=="2"):
-            eliminarC()
+            eliminarS()
         elif(opcion=="3"):
-            modificarC()
+            modificarS()
         elif(opcion=="4"):
-            listaC()
+            listaS()
         elif(opcion=="5"):
-            break
