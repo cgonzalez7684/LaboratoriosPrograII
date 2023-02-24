@@ -33,7 +33,7 @@ def crearFactura(
             ofactura=ofactura*0.05
         elif (ofactura.categoriaVenta == 'B'):
             ofactura=ofactura*0.10
-        else (ofactura.categoriaVenta == 'C'):
+        elif (ofactura.categoriaVenta == 'C'):
             DescManual = float(input("Ingrese el descuento manual en formato cero punto porcentaje, ej 0.15: "))
             print("El descuento manual es de: ", DescManual)
             ofactura=ofactura*DescManual
