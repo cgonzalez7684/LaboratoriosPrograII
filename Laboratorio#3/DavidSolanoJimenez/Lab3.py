@@ -28,8 +28,8 @@ def leer_lista():
 while True:
     print("Ociones")
     print("Digite 1 para ingresar un vehiculo")
-    print("Digite 2 para cambiar un elemento")
-    print("Digite 3 para eliminar un elemento")
+    print("Digite 2 para cambiar un vehiculo")
+    print("Digite 3 para eliminar un vehiculo")
     print("Digite 4 para ver la lista")
 
     seleccion = input("Digite una opcion: ")
