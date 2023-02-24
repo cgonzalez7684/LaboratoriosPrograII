@@ -1,0 +1,36 @@
+ist=[]
+
+def agregarS():
+    list.append(str(input("Escriba un nuevo numero: ")))
+
+def eliminarS():
+    numero = str(input("Escriba el numero que desea eliminar: "))
+    list.remove(numero)
+
+def modificarS():
+    numero = str(input("Escriba el numero que desea modificar: "))
+    index = list.index(numero)
+    list[index] =str(input("Escriba el nuevo numero: "))
+
+def listaS():
+ print("Los numeros agregados son:", list)
+
+def lista():
+    while True:
+        print("1. Agregar un nuevo numero)
+        print("2. Eliminar un numero")
+        print("3. Modificar un numero")
+        print("4. Ver lista ")
+        print("5. Salir de la lista")
+        opcion = int(input("Seleccionar una opcion de las anteriores"))
+
+
+        if(opcion=="1"):
+            agregarS()
+        elif(opcion=="2"):
+            eliminarS()
+        elif(opcion=="3"):
+            modificarS()
+        elif(opcion=="4"):
+            listaS()
+        elif(opcion=="5"):

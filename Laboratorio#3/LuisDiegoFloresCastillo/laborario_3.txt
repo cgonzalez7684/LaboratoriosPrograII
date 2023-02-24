@@ -1,0 +1,10 @@
+Laboratorio 3 de Luis Diego Flores
+ Para agregar un elemento al final a una lista se usa lista.append(elemento)
+ y para insertar un elemento se usa lista.pop() y lista.pop(posicion): elimina y devuelve el elemento en la posición especificada de la lista.
+ y para poner modicar se usa lista[posicion] = nuevo_elemento: asigna un nuevo valor a un elemento específico de la lista.
+  Para recorrer una lista se puede usar un while
+   indice = 0
+while indice < len(lista):
+    elemento = lista[indice]
+    # hacer algo con el elemento
+    indice += 1
